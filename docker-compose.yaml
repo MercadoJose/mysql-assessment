@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 14034:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "MerEdu511"
+    volumes:
+      - ./schemas:/var/lib/mysql:rw
